@@ -2,7 +2,7 @@ from scapy.all import sniff, IP, TCP, UDP
 import pandas as pd
 
 # STEP 1: INITIALIZE DATA COLLECTION
-print("\n\ud83d\udccc STEP 1: INITIALIZING PACKET CAPTURE")
+print("\n📌 STEP 1: INITIALIZING PACKET CAPTURE")
 # List to store captured data
 data_list = []
 
@@ -24,12 +24,12 @@ def packet_callback(packet):
         })
 
 # STEP 2: START PACKET CAPTURE
-print("\n\ud83d\udccc STEP 2: CAPTURING NETWORK PACKETS")
+print("\n📌 STEP 2: CAPTURING NETWORK PACKETS")
 # Capture packets (adjust count or timeout as needed)
 sniff(prn=packet_callback, count=200)
 
 # STEP 3: SAVE DATA TO CSV
-print("\n\ud83d\udccc STEP 3: SAVING CAPTURED DATA")
+print("\n📌 STEP 3: SAVING CAPTURED DATA")
 # Convert to DataFrame
 df = pd.DataFrame(data_list)
 df.to_csv("captured_network_data.csv", index=False)
